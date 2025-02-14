@@ -1,0 +1,17 @@
+{
+  "name": "common",
+  "module": "types.ts",
+  "type": "module",
+  "exports": {
+    ".": "./types.ts"
+  },
+  "scripts": {
+    "start": " bun run types.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

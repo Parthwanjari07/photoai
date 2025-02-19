@@ -1,4 +1,4 @@
-# prisma
+# db
 
 To install dependencies:
 

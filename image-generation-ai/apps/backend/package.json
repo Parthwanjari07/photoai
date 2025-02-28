@@ -2,7 +2,8 @@
   "name": "backend",
   "module": "index.ts",
   "scripts": {
-    "start": " bun run index.ts"
+    "start": " bun run index.ts",
+    "dev": "bun run index.ts"
   },
   "type": "module",
   "devDependencies": {

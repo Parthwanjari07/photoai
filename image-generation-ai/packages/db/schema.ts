@@ -17,6 +17,8 @@ export const ethnicityEnum = pgEnum('ethnicity_enum', [
 ]);
 export const eyeColorEnum = pgEnum('eye_color_enum', ['BROWN', 'BLUE', 'GREEN', 'HAZEL', 'GREY']);
 
+export const OutputImageStatusEnum = pgEnum('status_enum', ['PENDING', 'GENERATED', 'FAILED']);
+
 // Tables
 export const users = pgTable('users', {
   id: uuid('id').primaryKey().defaultRandom(),
@@ -52,6 +54,10 @@ export const outputImages = pgTable('output_images', {
   imageUrl: text('image_url').notNull(),
   modelId: uuid('model_id').notNull().references(() => models.id, { onDelete: 'cascade' }),
   userId: uuid('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+  prompt: text('prompt').notNull(),
+  status: OutputImageStatusEnum('status').notNull().default('PENDING'), 
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
 }, (table) => ({
   modelIdx: index('output_images_model_idx').on(table.modelId),
   userIdx: index('output_images_user_idx').on(table.userId),

@@ -5,7 +5,7 @@ export const TrainModel = z.object({
     name: z.string(),
     type: z.enum(['man', 'women', 'others']),
     age: z.number(),
-    ethinicity: z.enum(['White', 'Black', 'Asian American',"East Asian","South Asian","South East Asian","Middle Eastern","Hispanic","Pacific","Other"]),
+    ethnicity: z.enum(['White', 'Black', 'Asian American',"East Asian","South Asian","South East Asian","Middle Eastern","Hispanic","Pacific","Other"]),
     eyeColor: z.enum(['Brown', 'Blue', 'Green', 'Hazel','Grey']),
     bald: z.boolean(),
     images: z.array(z.string()),
